@@ -7,7 +7,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('/index.html')
 @app.route('/musicgenre', methods=["GET", "POST"])
 def musicgenre():
     if request.method == "POST":
