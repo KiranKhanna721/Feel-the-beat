@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify, render_template ,  send_from_directory
 import pandas as pd
 import numpy as np
+from config import Config
 import pickle
+app.config.from_object(Config)
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
