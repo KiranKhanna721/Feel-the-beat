@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-3">
+    <div class="header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">Musical Genres</h1>
+      <p class="fs-5 text-muted">Music can be divided into genres in varying ways, such as popular music and art music, or religious music and secular music.</p>
+    </div>
+    
+	<div class="p-3 pb-md-3 mx-auto col-8 text-center">
+		<form class="card p-2 " action="{{ url_for('musicgenre')}}" method="post">
+            <input type="text" name="chroma_stft" placeholder="chroma_stft" required="required" />
+			<input type="text" name="rmse" placeholder="rmse" required="required" />
+            <input type="text" name="spectral_centroid" placeholder="spectral_centroid" required="required" />
+            <input type="text" name="spectral_bandwidth" placeholder="spectral_bandwidth" required="required" />
+            <input type="text" name="rolloff" placeholder="rolloff" required="required" />
+            <input type="text" name="zero_crossing_rate" placeholder="zero_crossing_rate" required="required" />
+            <input type="text" name="mfcc1" placeholder="mfcc1" required="required" />
+			<input type="text" name="mfcc2" placeholder="mfcc2" required="required" />
+			<input type="text" name="mfcc3" placeholder="mfcc3" required="required" />
+			<input type="text" name="mfcc4" placeholder="mfcc4" required="required" />
+			<input type="text" name="mfcc5" placeholder="mfcc5" required="required" />
+			<input type="text" name="mfcc6" placeholder="mfcc6" required="required" />
+			<input type="text" name="mfcc7" placeholder="mfcc7" required="required" />
+			<input type="text" name="mfcc8" placeholder="mfcc8" required="required" />
+			<input type="text" name="mfcc9" placeholder="mfcc9" required="required" />
+			<input type="text" name="mfcc10" placeholder="mfcc10" required="required" />
+			<input type="text" name="mfcc11" placeholder="mfcc11" required="required" />
+			<input type="text" name="mfcc12" placeholder="mfcc12" required="required" />
+			<input type="text" name="mfcc13" placeholder="mfcc13" required="required" />
+			<input type="text" name="mfcc14" placeholder="mfcc14" required="required" />
+			<input type="text" name="mfcc15" placeholder="mfcc15" required="required" />
+			<input type="text" name="mfcc16" placeholder="mfcc16" required="required" />
+			<input type="text" name="mfcc17" placeholder="mfcc17" required="required" />
+			<input type="text" name="mfcc18" placeholder="mfcc18" required="required" />
+			<input type="text" name="mfcc19" placeholder="mfcc19" required="required" />
+			<input type="text" name="mfcc20" placeholder="mfcc20" required="required" />
+			<button type="submit" id='submit' name='submit' class="btn btn-secondary">Analyze</button>
+		</form>
+	</div>
+
+
+{% if predict %}
+	<div class="p-3 pb-md-3 mx-auto col-8 text-center">
+		<div class="col-md-5 col-lg-12 order-md-last mt-3">
+			<table class="table">
+			  <thead>
+				<tr>
+					<th scope="row">Prediction
+						<th scope="col">{{predict}}</th>
+					</th>
+				</tr>
+				<tr>
+					<th scope="row">Prediction Label
+						<th scope="col">{{label}}</th>
+					</th>
+				</tr>
+			  </thead>
+			</table>
+		</div>
+	</div>	
+{%endif%}
+</div>
+{% endblock %}
