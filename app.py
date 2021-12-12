@@ -70,8 +70,8 @@ def musicgenre():
         arr = np.array([l])
         prediction = model.predict(arr)
         output = round(prediction[0], 2)
-        return render_template('musicgenre.html',predict='Music is of genre : {}'.format(output),label=str(Class_name[output]))
-    return render_template("musicgenre.html",predict=None)
+        return render_template('/musicgenre.html',predict='Music is of genre : {}'.format(output),label=str(Class_name[output]))
+    return render_template("/musicgenre.html",predict=None)
 
 if __name__ == '__main__':
     app.run()
